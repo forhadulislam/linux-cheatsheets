@@ -1,6 +1,5 @@
-###########
-## GNOME ##
-###########
+## GNOME 
+
 
 Ctrl+Alt T — Terminal
 
@@ -36,47 +35,72 @@ Middle mouse button — Paste selected text
 
 
 NAUTILUS/NEMO:
+
 Ctrl L — Location, show path
+
 Ctrl+Shift N — New folder
+
 Ctrl H — Show hidden files
 
 
 GEDIT:
+
 Ctrl G — Find next
+
 Ctrl+Shift G — Find previous
+
 Ctrl+Shift K — Clear highlights
 
 
 TERMINAL:
+
 Ctrl+Shift C — Copy
+
 Ctrl+Shift V — Paste
+
 Ctrl+Shift T — New tab   
+
 Ctrl+Shift W — Close tab     
+
 Ctrl PgUp/PgDn — Switch tab
+
 Ctrl +/- — Zoom
+
 Ctrl D — Close terminal
+
 Ctrl S — Scroll lock
 
 
 BASH:
+
 Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
+
 Ctrl C — Interrupt, erase line
+
 Ctrl A — Go to beginning of line
+
 Ctrl E — End of line
+
 Ctrl U — Copy line
+
 Ctrl Y — Paste line
+
 Alt . — Last argument
+
 Ctrl R — Search trough history
+
 Alt * — Show all matches for regular expression
+
 Ctrl+Alt E — Show current line passed through alias, history and shell expansion
+
 Ctrl X, Ctrl E — Edit command in editor
+
 Ctrl P — Show last command (same as up arrow)
 
 
 
-###############################
-## AWESOME TERMINAL COMMANDS ##
-###############################
+## AWESOME TERMINAL COMMANDS
+
 
 ========
 PACKAGES:
@@ -85,6 +109,7 @@ PACKAGES:
 dpkg — Low level package manager for Debian.
     -l — Lists installed packages.
     -i <package> (sudo) — Installs package from a package file.
+ 
 apt-get — Advanced Package Tool built on top of `dpkg`. New command called 
         simply `apt` is also available. It merges the functionalities of 
         `apt-get` and `apt-cache`.
@@ -107,26 +132,32 @@ apt-get — Advanced Package Tool built on top of `dpkg`. New command called
     --yes — Answers with 'yes' to most questions (Except the ones that can have
             potentially harmful consequences).
     --force-yes — Answers 'yes' to all questions (Not recommended).
+ 
 apt-cache — Queries the APT's internal database. 
     search <keyword> — Searches packages like `apropos`, but globally.
     show <package> — Shows package info like version, dependencies, etc.
     showpkg <package> — Similar, but also shows the packages that depend on the
             searched package (reverse dependencies).
     policy <package> — Shows installed and remote version.
+ 
 apt-file — APT package searching utility.
     search <file> — Search in which package a file is included.
     update — Updates local list of package contents.
+ 
 aptitude — Enables package browsing (skin for apt-get).
     search '~i!~M' — Lists installed packages that were not installed as a 
             dependency, with short description of each.
     search <package> — Package search.
 
 winetricks — Installs wine applications.
+
 update-alternatives — Maintains symbolic links determining default commands.
+
 unattended-upgrade — Automatic installation of security upgrades.
 
 
 COMMANDS:
+
 apropos <cmd> — Searches the manual page names and descriptions (use quotes 
         for phrases).
     -a — Matches all keywords.
