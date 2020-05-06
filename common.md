@@ -19,68 +19,47 @@
     Middle mouse button — Paste selected text
 
 
-NAUTILUS/NEMO:
+## NAUTILUS/NEMO:
 
-Ctrl L — Location, show path
-
-Ctrl+Shift N — New folder
-
-Ctrl H — Show hidden files
+    Ctrl L — Location, show path
+    Ctrl+Shift N — New folder
+    Ctrl H — Show hidden files
 
 
-GEDIT:
+## GEDIT:
 
-Ctrl G — Find next
-
-Ctrl+Shift G — Find previous
-
-Ctrl+Shift K — Clear highlights
+    Ctrl G — Find next
+    Ctrl+Shift G — Find previous
+    Ctrl+Shift K — Clear highlights
 
 
-TERMINAL:
+## TERMINAL
 
-Ctrl+Shift C — Copy
-
-Ctrl+Shift V — Paste
-
-Ctrl+Shift T — New tab   
-
-Ctrl+Shift W — Close tab     
-
-Ctrl PgUp/PgDn — Switch tab
-
-Ctrl +/- — Zoom
-
-Ctrl D — Close terminal
-
-Ctrl S — Scroll lock
+    Ctrl+Shift C — Copy
+    Ctrl+Shift V — Paste
+    Ctrl+Shift T — New tab
+    Ctrl+Shift W — Close tab
+    Ctrl PgUp/PgDn — Switch tab
+    Ctrl +/- — Zoom
+    Ctrl D — Close terminal
+    Ctrl S — Scroll lock
 
 
-BASH:
+## BASH:
 
 Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
 
-Ctrl C — Interrupt, erase line
-
-Ctrl A — Go to beginning of line
-
-Ctrl E — End of line
-
-Ctrl U — Copy line
-
-Ctrl Y — Paste line
-
-Alt . — Last argument
-
-Ctrl R — Search trough history
-
-Alt * — Show all matches for regular expression
-
-Ctrl+Alt E — Show current line passed through alias, history and shell expansion
-
-Ctrl X, Ctrl E — Edit command in editor
-
-Ctrl P — Show last command (same as up arrow)
+    Ctrl C — Interrupt, erase line
+    Ctrl A — Go to beginning of line
+    Ctrl E — End of line
+    Ctrl U — Copy line
+    Ctrl Y — Paste line
+    Alt . — Last argument
+    Ctrl R — Search trough history
+    Alt * — Show all matches for regular expression
+    Ctrl+Alt E — Show current line passed through alias, history and shell expansion
+    Ctrl X, Ctrl E — Edit command in editor
+    Ctrl P — Show last command (same as up arrow)
 
 
 
