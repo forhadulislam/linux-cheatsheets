@@ -66,9 +66,7 @@ Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
 ## AWESOME TERMINAL COMMANDS
 
 
-========
-PACKAGES:
-========
+### PACKAGES
 
     dpkg — Low level package manager for Debian.
         -l — Lists installed packages.
@@ -140,9 +138,8 @@ PACKAGES:
     sudo make install
     ```
 
-=======
-GENERAL:
-=======
+
+### GENERAL
 
     su — Switches user.
         - <user> — Switches to user.
@@ -328,438 +325,444 @@ GENERAL:
 BASH:
 ====
 
-"$x" — ALWAYS PUT DOUBLE QUOTES AROUND VARIABLE!!!!!!!!!!!!!!! 
-       All variables in bash are global!!!!!!!
-"$*" — Combines all the arguments into single word, separating them with first character of IFS variable. If IFS is not set, space is used. If IFS is null, no separator is used!!!!!!!!! No args provided will result in one empty string being passed on!!! 
-"$@" — Use this instead!!!!! Will retain arguments as-is, so no args provided will result in no args being passed on. This is in most cases what you want to use for passing on arguments.
-    Google: "$@" is right almost everytime, and $* is wrong almost everytime.
-"$#" — Number of arguments
-"$1" — First argument
-"$0" — Name of the script
-$'\n' — String literal with escape sequences (there is a backslash before n)
-    If you want IFS to be a new line (useful with for loop) you need to: `IFS=$'\n'` - The dollar forces substitution!!!!!
-    Also if you want 'while read line; do...' to preserve leading spaces and tabs, you need to set IFS=""
-$? — Exit code of last command (0 - Success)
-Ctrl-Z, kill %% — Kill looping bash script
+    "$x" — ALWAYS PUT DOUBLE QUOTES AROUND VARIABLE!!!!!!!!!!!!!!! 
+           All variables in bash are global!!!!!!!
+    "$*" — Combines all the arguments into single word, separating them with first character of IFS variable. If IFS is not set, space is used. If IFS is null, no separator is used!!!!!!!!! No args provided will result in one empty string being passed on!!! 
+    "$@" — Use this instead!!!!! Will retain arguments as-is, so no args provided will result in no args being passed on. This is in most cases what you want to use for passing on arguments.
+        Google: "$@" is right almost everytime, and $* is wrong almost everytime.
+    "$#" — Number of arguments
+    "$1" — First argument
+    "$0" — Name of the script
+    $'\n' — String literal with escape sequences (there is a backslash before n)
+        If you want IFS to be a new line (useful with for loop) you need to: `IFS=$'\n'` - The dollar forces substitution!!!!!
+        Also if you want 'while read line; do...' to preserve leading spaces and tabs, you need to set IFS=""
+    $? — Exit code of last command (0 - Success)
+    Ctrl-Z, kill %% — Kill looping bash script
 
-test <expr> — Same as `[ <expr> ]`. Returns zero exit status if true.
-    -n — Is string non empty
-    -z — Is string empty
-    -a — And
-    -o — Or
-    = — Strings are equal
-    -nt — File newer than
-    -ot — Older then
-    -d — Directory exists
-    -e — File exists
-    -f — Is a regular file
-    -h — Its a symbolic link
-    -r — Has read permission
-    -w — Has write permission
-    -x — Has execute permission
-[[ <expr> ]] — Same as `[`, but without word splitting and filename expansion. And with additional operators: `&&`, `||`, `<`, `>` (lexicographic less, more), and also regular expression matching.
-=~ — Regex comparison operator: `[[ "$HOST" =~ ^user.* ]]`
-let <expr> — Executes expression: let a="$b"+2
+    test <expr> — Same as `[ <expr> ]`. Returns zero exit status if true.
+        -n — Is string non empty
+        -z — Is string empty
+        -a — And
+        -o — Or
+        = — Strings are equal
+        -nt — File newer than
+        -ot — Older then
+        -d — Directory exists
+        -e — File exists
+        -f — Is a regular file
+        -h — Its a symbolic link
+        -r — Has read permission
+        -w — Has write permission
+        -x — Has execute permission
+    [[ <expr> ]] — Same as `[`, but without word splitting and filename expansion. And with additional operators: `&&`, `||`, `<`, `>` (lexicographic less, more), and also regular expression matching.
+    =~ — Regex comparison operator: `[[ "$HOST" =~ ^user.* ]]`
+    let <expr> — Executes expression: let a="$b"+2
 
-$(command) — Same as `command`
-eval <variable> — Execute string as command
-$RANDOM — 0 - 32767
-input=`cat` — Getting standard input
-- — In place of a file name means standard in or out
-set -o vi — Set line editing to vi mode
-pushd . — Put current dir on stack
-popd — Pop dir from stack
-cd - — go to last dir
-source <script> — Run script: for example source /etc/profile (same as . <cmd>)
-#!/bin/bash — Good practice to insert at beginning of a bash script
-export  PATH="$PATH:<dir>" — Adds new directory to path environment variable.
-read  -p <message> — Prompt for user input
-var=${1:-"<default>"} — Setting variable with default value if $1 is empty
-getopts — Parse parameters/arguments, builtin
-getopt — GNU version is even better then getopts, not a builtin
-while read line; do <commands>; done < <file> — Read from file line by line
-    -r — Do not treat backslashes as escape characters
-complete -F <completion_function> <cmd> — Set completion function for command
-complete -p <cmd> — Print the completion function for command
-compgen -c <pattern> — Print all completions for pattern
-help <builtin> — Display information about builtin command
-wait — Wait for all background processes to end
-
-
-SAFETY:
-set — -e — Exit if any command fails
-    -u — Exit if referencing undefined variable
-    -o pipefail — If any command in a pipeline fails, its return code is used as the return code of the whole pipeline
-IFS=$'\n\t' — Remove space from the default Internal Field Separator
+    $(command) — Same as `command`
+    eval <variable> — Execute string as command
+    $RANDOM — 0 - 32767
+    input=`cat` — Getting standard input
+    - — In place of a file name means standard in or out
+    set -o vi — Set line editing to vi mode
+    pushd . — Put current dir on stack
+    popd — Pop dir from stack
+    cd - — go to last dir
+    source <script> — Run script: for example source /etc/profile (same as . <cmd>)
+    #!/bin/bash — Good practice to insert at beginning of a bash script
+    export  PATH="$PATH:<dir>" — Adds new directory to path environment variable.
+    read  -p <message> — Prompt for user input
+    var=${1:-"<default>"} — Setting variable with default value if $1 is empty
+    getopts — Parse parameters/arguments, builtin
+    getopt — GNU version is even better then getopts, not a builtin
+    while read line; do <commands>; done < <file> — Read from file line by line
+        -r — Do not treat backslashes as escape characters
+    complete -F <completion_function> <cmd> — Set completion function for command
+    complete -p <cmd> — Print the completion function for command
+    compgen -c <pattern> — Print all completions for pattern
+    help <builtin> — Display information about builtin command
+    wait — Wait for all background processes to end
 
 
-HISTORY:
-sudo !! — Run the last command as root 
-␣<cmd> — Execute a command without saving it in the history
-!<cmd> — Run last command that starts with cmd
+## SAFETY
+    set — -e — Exit if any command fails
+        -u — Exit if referencing undefined variable
+        -o pipefail — If any command in a pipeline fails, its return code is used as the return code of the whole pipeline
+    IFS=$'\n\t' — Remove space from the default Internal Field Separator
 
 
-REDIRECTIONS:
-<cmd> 2> /dev/null — Redirect error output to `null`
-<cmd> &> /dev/null — Redirect both standard and error output to `null`
-<cmd> >&2 — Write to stderr
-<cmd> 2>&1 | less — Add stderr to stdout and print it with less (useful for gcc)
+    HISTORY:
+    sudo !! — Run the last command as root 
+    ␣<cmd> — Execute a command without saving it in the history
+    !<cmd> — Run last command that starts with cmd
+
+
+## REDIRECTIONS:
+    <cmd> 2> /dev/null — Redirect error output to `null`
+    <cmd> &> /dev/null — Redirect both standard and error output to `null`
+    <cmd> >&2 — Write to stderr
+    <cmd> 2>&1 | less — Add stderr to stdout and print it with less (useful for gcc)
 
 
 ARRAYS AND LINES:
-Reads line by line from variable. To preserve spaces use `IFS=`.
-```
-while IFS= read -r line; do
-    echo "... $line ..."
-done <<< "$list" — 
-```
 
-${a[1]} — Value of the second element of the array
-for c in ${a[@]} — Iterate over array
-${varname:offset:length} — Get substring: `s="aeiou"; ${s:3:1} -> o`
-${#var} — Length of a var 
-${#name[subscript]} — Length  of the element
-${#name[@]} — Length  of the array
+    Reads line by line from variable. To preserve spaces use `IFS=`.
+    ```
+    while IFS= read -r line; do
+        echo "... $line ..."
+    done <<< "$list" — 
+    ```
+
+    ${a[1]} — Value of the second element of the array
+    for c in ${a[@]} — Iterate over array
+    ${varname:offset:length} — Get substring: `s="aeiou"; ${s:3:1} -> o`
+    ${#var} — Length of a var 
+    ${#name[subscript]} — Length  of the element
+    ${#name[@]} — Length  of the array
 
 
 ALIASES AND FUNCTIONS:
-alias — Print all aliases
-    <name> — Print alias
-    <name>='cmd' — Set alias
-command <cmd> — Executes original command, bypassing any aliases or shell functions that may be defined for command
-\<cmd> — Temporarily disable alias (call original)
-type <cmd> — Will tell you what is command aliased to or if it is a builtin, function or a command
-    -P just check commands
-declare -F — Print function names
-declare -f — Print functions
 
+    alias — Print all aliases
+        <name> — Print alias
+        <name>='cmd' — Set alias
+    command <cmd> — Executes original command, bypassing any aliases or shell functions that may be defined for command
+    \<cmd> — Temporarily disable alias (call original)
+    type <cmd> — Will tell you what is command aliased to or if it is a builtin, function or a command
+        -P just check commands
+    declare -F — Print function names
+    declare -f — Print functions
 
-====
-TEXT:
-====
+## TEXT
 
 PRINT:
-head — -n-<num_of_lines> — Print all lines but the last n
-    -c <num_of_chars> — Print first c characters
-tail — -n+<line_num> — Start at line number
-    -f — Do not stop printing (follow)
-cat — -n — Number all lines
-    >> file — Simplest text editor (great for pasting)
-less  &<patt> — Display only lines with pattern
-    -N — Show line numbers
-    -~ — Do not show `~` after `EOF`
-    +G — Tells less to start at the end of the file
-    +F — Follow the input (to scroll up first press ctrl+c)
-    -F — Or --quit-if-one-screen
-    v — Opens editor defined in `$VISUAL` or `$EDITOR`
-    :n — Examine the next file
-    <, > — Go to home, end
-wc — Count lines, words and characters
+    head — -n-<num_of_lines> — Print all lines but the last n
+        -c <num_of_chars> — Print first c characters
+    tail — -n+<line_num> — Start at line number
+        -f — Do not stop printing (follow)
+    cat — -n — Number all lines
+        >> file — Simplest text editor (great for pasting)
+    less  &<patt> — Display only lines with pattern
+        -N — Show line numbers
+        -~ — Do not show `~` after `EOF`
+        +G — Tells less to start at the end of the file
+        +F — Follow the input (to scroll up first press ctrl+c)
+        -F — Or --quit-if-one-screen
+        v — Opens editor defined in `$VISUAL` or `$EDITOR`
+        :n — Examine the next file
+        <, > — Go to home, end
+    wc — Count lines, words and characters
 
 
-EDIT:
-sudo -e <file> — Edit file as sudo
-tr <from> <to> — Translate characters
-    -d — Delete characters
-cut <file> — Removes columns from each line of files
-    -d ':' -f 1,7 /etc/passwd — Only show the username and the shell
-sort — Sorts lines
-    -u — Uniq, removes duplicates
-    -t — Set delimiter for fields (default is space)
-    -k — Select by which field to sort 
-uniq — Removes adjacent duplicates
-    -c — Count
-    -d — Intersection
-    -u — Difference
-column — Columnate text
-    -t — Create a table
-shuf — Shuffle input lines
-tac — Concatenate and print files in reverse (reverse `cat`)
-join — Join lines of two files on a common field
-colrm  [from [to]] — Removes columns
-seq <number> — Output numbers from 1 to number
-ispell, aspell — Interactive spell checker
-basename <path> — Strips directory from path
-    -s .<suffix> — Also strip suffix
-    -a — Process multiple filenames
-dirname <path> — Strip last component from path
-fmt — Produce roughly uniform line lengths
-fold — Wrap each input line to fit in specified width
-paste — Glue two documents side by side
-sed — 's///g' — Substitute every occurrence in line, not just the first one
-    's///I' — Ignore case
-    -r — Extended syntax, for `+`, `?`, ... Also you shouldn't escape the parenthesis
-    -r 's###e' — Execute match as a command
-    -i <file> — Will make changes directly to the file (in place)
-    -u — Unbuffered mode (processes input immediately)
-        -n l — Print escape sequence (keycode) of a pressed key
-expand — Convert tabs to spaces
-    -t <number> — Set number of spaces (default is 8)
-    -i — Do not convert tabs after non blanks
+## EDIT
+
+    sudo -e <file> — Edit file as sudo
+    tr <from> <to> — Translate characters
+        -d — Delete characters
+    cut <file> — Removes columns from each line of files
+        -d ':' -f 1,7 /etc/passwd — Only show the username and the shell
+    sort — Sorts lines
+        -u — Uniq, removes duplicates
+        -t — Set delimiter for fields (default is space)
+        -k — Select by which field to sort 
+    uniq — Removes adjacent duplicates
+        -c — Count
+        -d — Intersection
+        -u — Difference
+    column — Columnate text
+        -t — Create a table
+    shuf — Shuffle input lines
+    tac — Concatenate and print files in reverse (reverse `cat`)
+    join — Join lines of two files on a common field
+    colrm  [from [to]] — Removes columns
+    seq <number> — Output numbers from 1 to number
+    ispell, aspell — Interactive spell checker
+    basename <path> — Strips directory from path
+        -s .<suffix> — Also strip suffix
+        -a — Process multiple filenames
+    dirname <path> — Strip last component from path
+    fmt — Produce roughly uniform line lengths
+    fold — Wrap each input line to fit in specified width
+    paste — Glue two documents side by side
+    sed — 's///g' — Substitute every occurrence in line, not just the first one
+        's///I' — Ignore case
+        -r — Extended syntax, for `+`, `?`, ... Also you shouldn't escape the parenthesis
+        -r 's###e' — Execute match as a command
+        -i <file> — Will make changes directly to the file (in place)
+        -u — Unbuffered mode (processes input immediately)
+            -n l — Print escape sequence (keycode) of a pressed key
+    expand — Convert tabs to spaces
+        -t <number> — Set number of spaces (default is 8)
+        -i — Do not convert tabs after non blanks
 
 
-DIFF:
-diff — -u <files> — Unified format
-    --brief -r — Compare two directory trees
-colordiff — Version of diff with colors
-sdiff — Two files side by side
-comm — Compare two sorted files line by line
-patch — Apply a diff file to original
-    patch < patch.diff — Apply patch
-    diff -u <old_file> <new_file> > patch.diff — Create patch
+## DIFF
+    diff — -u <files> — Unified format
+        --brief -r — Compare two directory trees
+    colordiff — Version of diff with colors
+    sdiff — Two files side by side
+    comm — Compare two sorted files line by line
+    patch — Apply a diff file to original
+        patch < patch.diff — Apply patch
+        diff -u <old_file> <new_file> > patch.diff — Create patch
 
 
-SEARCH:
-grep <patt> <file> — -v — Inverse
-    -n — Line numbers 
-    -w — Whole word 
-    -A<num> — Print also num lines after
-    -B<num> — Print also num lines before
-    -r — Recursive 
-    -o — Print only matching part
-    -P — Perl notation with additional operators such as: `\\t`, `+` and `?` (non-greedy!!!!).
-    -i — Ignore case 
-    -I — Do not process binary files 
-    -l — Just print files with matches 
-    -L — Just print files without matches
-    -e <patt> — Necessary to put before pattern if it starts with `-`!!!!!!! or if you want multiple patterns.
-    | wc -l — Count occurrences
-    --line-buffered — Processes input line by line instead of in bigger chunks
-look — Display lines beginning with a given string
-strings — Print all text parts of binary file
+## SEARCH
+
+    grep <patt> <file> — -v — Inverse
+        -n — Line numbers 
+        -w — Whole word 
+        -A<num> — Print also num lines after
+        -B<num> — Print also num lines before
+        -r — Recursive 
+        -o — Print only matching part
+        -P — Perl notation with additional operators such as: `\\t`, `+` and `?` (non-greedy!!!!).
+        -i — Ignore case 
+        -I — Do not process binary files 
+        -l — Just print files with matches 
+        -L — Just print files without matches
+        -e <patt> — Necessary to put before pattern if it starts with `-`!!!!!!! or if you want multiple patterns.
+        | wc -l — Count occurrences
+        --line-buffered — Processes input line by line instead of in bigger chunks
+    look — Display lines beginning with a given string
+    strings — Print all text parts of binary file
 
 
-CONVERT:
-todos, fromdos — Convert line endings form/to windows format (package tofrodos)
-enscript — Converts text files to postscript, rtf, HTML
-gs — Ghostscript: postscript and PDF language interpreter and previewer
-pdftohtml — Pdf to html
-pdftotext — Pdf to text
-libreoffice — New Openoffice
-figlet — Display large characters made up of ordinary screen characters (Ascii art)
-toilet — Similar (Ascii art)
-cproto — Generates C function prototypes (declarations)
+## CONVERT
+
+    todos, fromdos — Convert line endings form/to windows format (package tofrodos)
+    enscript — Converts text files to postscript, rtf, HTML
+    gs — Ghostscript: postscript and PDF language interpreter and previewer
+    pdftohtml — Pdf to html
+    pdftotext — Pdf to text
+    libreoffice — New Openoffice
+    figlet — Display large characters made up of ordinary screen characters (Ascii art)
+    toilet — Similar (Ascii art)
+    cproto — Generates C function prototypes (declarations)
 
 
-EDITORS:
-nano — Simple text editor.
-    /etc/nanorc — Config file.
-    /usr/share/nano/<lang>.nanorc — Syntax highlight files.
-    Alt + / or ? — Go to last line.
-fte — Cool text editor with CUA (IBM)-shortcuts
-diakonos — Simple terminal text editor with ctrl-c for copy
-pyroom — Distraction free writing (gui)
+## EDITORS
+
+    nano — Simple text editor.
+        /etc/nanorc — Config file.
+        /usr/share/nano/<lang>.nanorc — Syntax highlight files.
+        Alt + / or ? — Go to last line.
+    fte — Cool text editor with CUA (IBM)-shortcuts
+    diakonos — Simple terminal text editor with ctrl-c for copy
+    pyroom — Distraction free writing (gui)
 
 
-=======
-NETWORK:
-=======
 
-whois — Info about domain
-host <ip/hostname> — DNS lookup utility
-nslookup — Same interactively
-dig — Same, lot of options
-hostname — Prints/sets computer name, to set it permanently edit `/etc/hostname` and `/etc/hosts`
-netstat — Displays contents of /proc/net files,  status of ports...
-    -r — Show routing table
-    -i — Show interfaces
-arp — Manipulate the system ARP cache (IP -> mac)
-route — Tool used to display or modify the routing table
-    add default gw <ip> — Change the default gateway
-    should DNS not be configured correctly on your machine, you need to edit `/etc/resolv.conf` to make things work
-ifconfig eth0   down/up (sudo) — Turn network interface on/off 
-    <ip> netmask <mask> up — Set ip and mask
-ifup eth0 — Will bring eth0 up if it is currently down.
-ip  link show — List network interfaces
-    link set dev eth0 up — Bring interface eth0 up or down
-    addr show — List addresses of interfaces
-    route add default via <ip> — Set default gateway
-traceroute, traceroute6, traceroute6.iputils — Traces route
-tracepath, tracepath6 — Similar (iputils package)
-mtr — Combines the functionality of the traceroute and ping
-findsmb — List info about machines that respond to SMB name queries - Windows based machines sharing their hard disks
-/etc/services — List of internet services with their port numbers
-NetworkManager — Network management daemon, configuration file is in /etc/NetworkManager/NetworkManager.conf 
-nm-tool — Prints info 
-nm-online — Is network connected 
-nmcli — Command-line tool for controlling NetworkManager
-nc — (netcat) It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning...
-ncat — Concatenate and redirect sockets
-ethtool eth0 — Show status of eth0
-    -S — Statistics
-    -s — Change settings (speed, duplex,...)
-ss -tupl — List internet services on a system
-    -tuo — List active connections to/from system
+## NETWORK
 
-
-WIRELESS:
-iwconfig — Sets the wireless configuration options basic to most wireless devices
-iwlist wlan0 — <option> — Displays current status information of a device, more detailed then iwconfig
-        scan (sudo) — List wireless networks in range 
-iwspy — Sets the list of IP addresses in a wireless network and checks the quality of their connections
-iwpriv — Accesses configuration options specific to a particular device
-rfkill  list — Show wireless adapters (wifi and bluetooth)
-    block/unblock <dev_num> — Block/unblock wireless device
-iw dev wlan0 — link — Show link status of wlan0
-        set biterates <standard> — Manually set interface speed
-        scan (sudo) — List wireless networks in range 
-wavemon — Monitor wireless connection link quality
+    whois — Info about domain
+    host <ip/hostname> — DNS lookup utility
+    nslookup — Same interactively
+    dig — Same, lot of options
+    hostname — Prints/sets computer name, to set it permanently edit `/etc/hostname` and `/etc/hosts`
+    netstat — Displays contents of /proc/net files,  status of ports...
+        -r — Show routing table
+        -i — Show interfaces
+    arp — Manipulate the system ARP cache (IP -> mac)
+    route — Tool used to display or modify the routing table
+        add default gw <ip> — Change the default gateway
+        should DNS not be configured correctly on your machine, you need to edit `/etc/resolv.conf` to make things work
+    ifconfig eth0   down/up (sudo) — Turn network interface on/off 
+        <ip> netmask <mask> up — Set ip and mask
+    ifup eth0 — Will bring eth0 up if it is currently down.
+    ip  link show — List network interfaces
+        link set dev eth0 up — Bring interface eth0 up or down
+        addr show — List addresses of interfaces
+        route add default via <ip> — Set default gateway
+    traceroute, traceroute6, traceroute6.iputils — Traces route
+    tracepath, tracepath6 — Similar (iputils package)
+    mtr — Combines the functionality of the traceroute and ping
+    findsmb — List info about machines that respond to SMB name queries - Windows based machines sharing their hard disks
+    /etc/services — List of internet services with their port numbers
+    NetworkManager — Network management daemon, configuration file is in /etc/NetworkManager/NetworkManager.conf 
+    nm-tool — Prints info 
+    nm-online — Is network connected 
+    nmcli — Command-line tool for controlling NetworkManager
+    nc — (netcat) It can open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning...
+    ncat — Concatenate and redirect sockets
+    ethtool eth0 — Show status of eth0
+        -S — Statistics
+        -s — Change settings (speed, duplex,...)
+    ss -tupl — List internet services on a system
+        -tuo — List active connections to/from system
 
 
-========
-INTERNET:
-========
+## WIRELESS
 
-mutt — Mail client
-sftp — Secure ftp
-sshd — (openssh-server) ssh server deamon, on Windows service is named 'CYGWIN sshd'
-
-/etc/init.d/ssh restart (sudo) — Restart sshd (ssh deamon) 
-/usr/local/etc/init.d/openssh start (sudo) — Start openssh deamon 
-ssh-keygen -t rsa -C <email> — Generate rsa key pair, keys are stored in ~/.ssh
-
-ssh — SSH client
-    <user>@<address> "mpg321 -" < <file>.mp3 — Stream audio over ssh
-        enter ~. — Kill unresponsive session
-scp — Securely copy files over network. Example: `scp <local_file> <user>@<host>:~<remote_file>`
-wget — Download files from WWW
-    -O — Specify output file
-    -c — Continue downloading unfinished file. Can also use wildcards, but use single quotes around url. 
-    -r -l1 --no-parent -A.gif — Recursively to the depth of one ignoring references to the parent directory and all gifs.
-curl — Similar
-    -qO - — Writes to standard output + quiet 
-    -i — Urls specified by standard input
-transmissioncli — Torrent terminal client 
-    -d — Download limit (kB/s)
-    -u — Upload limit 
-youtube-dl — Download from YouTube
-noip2 — Dynamic dns update client
-rdesktop — Remote Desktop Protocol client
-tin, nn — Usenet client
-nrss — Rss feed reader
+    iwconfig — Sets the wireless configuration options basic to most wireless devices
+    iwlist wlan0 — <option> — Displays current status information of a device, more detailed then iwconfig
+            scan (sudo) — List wireless networks in range 
+    iwspy — Sets the list of IP addresses in a wireless network and checks the quality of their connections
+    iwpriv — Accesses configuration options specific to a particular device
+    rfkill  list — Show wireless adapters (wifi and bluetooth)
+        block/unblock <dev_num> — Block/unblock wireless device
+    iw dev wlan0 — link — Show link status of wlan0
+            set biterates <standard> — Manually set interface speed
+            scan (sudo) — List wireless networks in range 
+    wavemon — Monitor wireless connection link quality
 
 
-BROWSERS:
-lynx — Terminal web browser 
-    -cmd_log=<file> — Write keystrokes to script
-    -cmd_script=<file> — Read keystrokes from script
-    -syslog-urls — Log requested URLs with syslog.
-    -dumb — Prints txt to stdout 
-    -crawl — Same, turns numbers off
-    -source — Prints html to stdout
-    -l — Add the current link to your bookmark file 
-    a — Save the address of a document or link to a bookmark file, by default ~/lynx_bookmarks.html
-    o — Options (you can select vim mode)
-    ctrl+n — Scroll down two lines
-    ctrl+p — Scroll up two lines
-    ctrl+p — Previous line
-    crrl+n — Next line
-elinks — Another web browser (has menus)
+## INTERNET
+
+    mutt — Mail client
+    sftp — Secure ftp
+    sshd — (openssh-server) ssh server deamon, on Windows service is named 'CYGWIN sshd'
+
+    /etc/init.d/ssh restart (sudo) — Restart sshd (ssh deamon) 
+    /usr/local/etc/init.d/openssh start (sudo) — Start openssh deamon 
+    ssh-keygen -t rsa -C <email> — Generate rsa key pair, keys are stored in ~/.ssh
+
+    ssh — SSH client
+        <user>@<address> "mpg321 -" < <file>.mp3 — Stream audio over ssh
+            enter ~. — Kill unresponsive session
+    scp — Securely copy files over network. Example: `scp <local_file> <user>@<host>:~<remote_file>`
+    wget — Download files from WWW
+        -O — Specify output file
+        -c — Continue downloading unfinished file. Can also use wildcards, but use single quotes around url. 
+        -r -l1 --no-parent -A.gif — Recursively to the depth of one ignoring references to the parent directory and all gifs.
+    curl — Similar
+        -qO - — Writes to standard output + quiet 
+        -i — Urls specified by standard input
+    transmissioncli — Torrent terminal client 
+        -d — Download limit (kB/s)
+        -u — Upload limit 
+    youtube-dl — Download from YouTube
+    noip2 — Dynamic dns update client
+    rdesktop — Remote Desktop Protocol client
+    tin, nn — Usenet client
+    nrss — Rss feed reader
 
 
-HACKING:
-nmap — -sP 192.168.1.1-3 — Network scanning
-    192.168.1.3 -p100-139 — Port scanning
-    -O 192.168.1.3 (sudo) — Scanning os 
-tcpdump (sudo) — Sniffer (show network traffic) 
-    -l — Buffered output (for piping to less, etc.)
-ettercap — Multipurpose sniffer/interceptor/logger for switched LAN (can detect man in the middle, denial of service, DNS spoofing)
-driftnet — Picks out and displays images from network traffic
-kismet — Wireless 802.11b monitoring tool
-aircrack-ng — Wireless WEP/WPA cracking utilities
-Cain & Abel — Password recovery tool for Microsoft Operating Systems
-dnsniff — Warious hacking tools: 
-    arpspoof — For man in the middle attack
-    dsniff — Password sniffer for several protocols, ...
-ip link set eth0    promisc on — Set network interface to promiscuous mode
-            multicast off — Set multicast off
+## BROWSERS
+
+    lynx — Terminal web browser 
+        -cmd_log=<file> — Write keystrokes to script
+        -cmd_script=<file> — Read keystrokes from script
+        -syslog-urls — Log requested URLs with syslog.
+        -dumb — Prints txt to stdout 
+        -crawl — Same, turns numbers off
+        -source — Prints html to stdout
+        -l — Add the current link to your bookmark file 
+        a — Save the address of a document or link to a bookmark file, by default ~/lynx_bookmarks.html
+        o — Options (you can select vim mode)
+        ctrl+n — Scroll down two lines
+        ctrl+p — Scroll up two lines
+        ctrl+p — Previous line
+        crrl+n — Next line
+    elinks — Another web browser (has menus)
 
 
-======
-SYSTEM:
-======
+## HACKING
 
-meta, system info — In cinnamon
-uname -a — Print system info, kernel version
-cat /etc/issue — Show name and version of distribution
-
-init — Upstart init daemon job configuration
-telinit — Change system runlevel
-dmesg — Print the contents of your bootup (startup) messages displayed by the kernel. This is often useful when debugging problems
-getconf -a — Print all system configuration variables
-nohup <cmd> — Run a command immune to hangups, runs even after the shell is closed (writes output to nohup.out)
-    &>/dev/null & — Run a command immune to hangups in background, do not save output
-wmctrl — X Window Manager
-awesome — Tiled window manager
-    -k — Check configuration script for errors
-
-busybox <cmd> — Combines tiny versions of many common UNIX utilities into a single small executable. (1.5 Mb)
-mono — .NET support
+    nmap — -sP 192.168.1.1-3 — Network scanning
+        192.168.1.3 -p100-139 — Port scanning
+        -O 192.168.1.3 (sudo) — Scanning os 
+    tcpdump (sudo) — Sniffer (show network traffic) 
+        -l — Buffered output (for piping to less, etc.)
+    ettercap — Multipurpose sniffer/interceptor/logger for switched LAN (can detect man in the middle, denial of service, DNS spoofing)
+    driftnet — Picks out and displays images from network traffic
+    kismet — Wireless 802.11b monitoring tool
+    aircrack-ng — Wireless WEP/WPA cracking utilities
+    Cain & Abel — Password recovery tool for Microsoft Operating Systems
+    dnsniff — Warious hacking tools: 
+        arpspoof — For man in the middle attack
+        dsniff — Password sniffer for several protocols, ...
+    ip link set eth0    promisc on — Set network interface to promiscuous mode
+                multicast off — Set multicast off
 
 
-USERS:
-users — Prints logged in users
-who — Logged in users, more data
-w — Logged in users, also what are they running
-vipw — Edit password file
-vigr — Edit groups file
-umask —  the umask is a value set by the shell. It controls the default permissions of any file created
-usermod <user> — Modify user account information
-    -l <new_name> <old_name> —
-    -c "<new_real_name>" <user> —
-    -d /my/new/home <user> — Change location of the users home
-    -m -d /my/new/home — Also move the files
-useradd <user> — Add user
-adduser <user> — More high level (use `adduser <user> sudo`  after to add user to sudo group)
-    --system — Create system user (can not log in) 
-    <group> — Add user to group (only takes effect after login!!!)
-groups <user> — What groups user belongs to
-userdel -r <user> — Remove user and his home dir
-deluser  -remove-all-files <user> — More high level, removes also files outside home, cron jobs, itd
-passwd <user> — Change password
+
+## SYSTEM
+
+    meta, system info — In cinnamon
+    uname -a — Print system info, kernel version
+    cat /etc/issue — Show name and version of distribution
+
+    init — Upstart init daemon job configuration
+    telinit — Change system runlevel
+    dmesg — Print the contents of your bootup (startup) messages displayed by the kernel. This is often useful when debugging problems
+    getconf -a — Print all system configuration variables
+    nohup <cmd> — Run a command immune to hangups, runs even after the shell is closed (writes output to nohup.out)
+        &>/dev/null & — Run a command immune to hangups in background, do not save output
+    wmctrl — X Window Manager
+    awesome — Tiled window manager
+        -k — Check configuration script for errors
+
+    busybox <cmd> — Combines tiny versions of many common UNIX utilities into a single small executable. (1.5 Mb)
+    mono — .NET support
 
 
-FILE SYSTEMS:
-mkfs — Build a Linux filesystem
-mke2fs — Create a ext filesystem
-mkswap — Set up a swap area
-parted — Partition manipulation program
-    -l (sudo) — List partitions 
-fdisk — Manipulate disk partition table
-    -l (sudo) — List partitions 
-disks — Nice GUI partition tool
-mount — List all mounted devices (to get list of devices use `fdisk -l`)
-    <device> <path> — For example mount /dev/hdc2 to /mymedia
-lsattr — List file attributes
-chattr — Change file attributes
-rkhunter -c — Checks if it can find any rootkits under the system
-ntfsundelete — Undelete files on NTFS partition 
+## USERS
+
+    users — Prints logged in users
+    who — Logged in users, more data
+    w — Logged in users, also what are they running
+    vipw — Edit password file
+    vigr — Edit groups file
+    umask —  the umask is a value set by the shell. It controls the default permissions of any file created
+    usermod <user> — Modify user account information
+        -l <new_name> <old_name> —
+        -c "<new_real_name>" <user> —
+        -d /my/new/home <user> — Change location of the users home
+        -m -d /my/new/home — Also move the files
+    useradd <user> — Add user
+    adduser <user> — More high level (use `adduser <user> sudo`  after to add user to sudo group)
+        --system — Create system user (can not log in) 
+        <group> — Add user to group (only takes effect after login!!!)
+    groups <user> — What groups user belongs to
+    userdel -r <user> — Remove user and his home dir
+    deluser  -remove-all-files <user> — More high level, removes also files outside home, cron jobs, itd
+    passwd <user> — Change password
 
 
-LOGGING:
-last — When various users have logged in or out. This includes information on when the computer was rebooted.
-lastlog — Displays a list of users and what day/time they logged into the 
-    system.  
-    To get all failed logins run:  
-    `cat /var/log/auth.log | grep "failed password" -i`.
-rsyslogd —  manages all the logs on your system
-    closelog, openlog, syslog, vsyslog -> library calls that send messages to the system logger
-logger — Makes entries in the system log
-zeitgeist — Activity logger
+## FILE SYSTEMS
+
+    mkfs — Build a Linux filesystem
+    mke2fs — Create a ext filesystem
+    mkswap — Set up a swap area
+    parted — Partition manipulation program
+        -l (sudo) — List partitions 
+    fdisk — Manipulate disk partition table
+        -l (sudo) — List partitions 
+    disks — Nice GUI partition tool
+    mount — List all mounted devices (to get list of devices use `fdisk -l`)
+        <device> <path> — For example mount /dev/hdc2 to /mymedia
+    lsattr — List file attributes
+    chattr — Change file attributes
+    rkhunter -c — Checks if it can find any rootkits under the system
+    ntfsundelete — Undelete files on NTFS partition 
 
 
-LOAD:
-tload — 'graphic' representation of system load
-top — Show processes by resource consumption
-    <, > — Change resource
-htop — Better top
-free -tm — Displays memory statistics 
-    -s <seconds> — Continuously display
-vmstat — Performance of system components / virtual memory statistics
-sar — System activity information
-iostat — Disk usage
-time <cmd> — Time a execution of a command
-perf — Profiler
+## LOGGING
+
+    last — When various users have logged in or out. This includes information on when the computer was rebooted.
+    lastlog — Displays a list of users and what day/time they logged into the 
+        system.  
+        To get all failed logins run:  
+        `cat /var/log/auth.log | grep "failed password" -i`.
+    rsyslogd —  manages all the logs on your system
+        closelog, openlog, syslog, vsyslog -> library calls that send messages to the system logger
+    logger — Makes entries in the system log
+    zeitgeist — Activity logger
+
+
+## LOAD
+
+    tload — 'graphic' representation of system load
+    top — Show processes by resource consumption
+        <, > — Change resource
+    htop — Better top
+    free -tm — Displays memory statistics 
+        -s <seconds> — Continuously display
+    vmstat — Performance of system components / virtual memory statistics
+    sar — System activity information
+    iostat — Disk usage
+    time <cmd> — Time a execution of a command
+    perf — Profiler
 
 
 TRACING:
