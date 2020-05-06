@@ -1,37 +1,37 @@
 ## GNOME 
 
 
- `Ctrl+Alt T — Terminal
+    `Ctrl+Alt T — Terminal
 
- Ctrl+Alt F — Firefox
+    Ctrl+Alt F — Firefox
 
- Ctrl+Alt H — Home
+    Ctrl+Alt H — Home
 
- Ctrl+Alt G — Gedit
+    Ctrl+Alt G — Gedit
 
- Alt F12 — Run command
+    Alt F12 — Run command
 
- Alt F1 — Minimize window
+    Alt F1 — Minimize window
 
- Alt F2 — Toggle maximize window
+    Alt F2 — Toggle maximize window
 
- Alt F3 — Toggle full screen
+    Alt F3 — Toggle full screen
 
- Ctrl+Alt D — Minimize all windows
+    Ctrl+Alt D — Minimize all windows
 
- Ctrl+Alt F1-F6 — Terminals (tty-s)
+    Ctrl+Alt F1-F6 — Terminals (tty-s)
 
- Ctrl+Alt F7-F12 — Xwindows
+    Ctrl+Alt F7-F12 — Xwindows
 
- Ctrl+Alt Bksp — Restart X
+    Ctrl+Alt Bksp — Restart X
 
- Ctrl+Alt Del — Log out
+    Ctrl+Alt Del — Log out
 
- Ctrl+Alt End — Shutdown
+    Ctrl+Alt End — Shutdown
 
- Super PgUp/PgDn — Switch workspace
+    Super PgUp/PgDn — Switch workspace
 
- Middle mouse button — Paste selected text`
+    Middle mouse button — Paste selected text`
 
 
 NAUTILUS/NEMO:
