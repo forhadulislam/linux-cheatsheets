@@ -432,7 +432,8 @@ Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
 
 ## TEXT
 
-PRINT:
+## PRINT:
+
     head — -n-<num_of_lines> — Print all lines but the last n
         -c <num_of_chars> — Print first c characters
     tail — -n+<line_num> — Start at line number
