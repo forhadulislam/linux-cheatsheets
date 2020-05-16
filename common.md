@@ -139,7 +139,7 @@ Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
     ```
 
 
-### GENERAL
+## GENERAL
 
     su — Switches user.
         - <user> — Switches to user.
@@ -321,9 +321,7 @@ Keys when in emacs mode. You can switch to `vi` mode with `set -o vi` command.
         % — Split vertically 
 
 
-====
-BASH:
-====
+## BASH
 
     "$x" — ALWAYS PUT DOUBLE QUOTES AROUND VARIABLE!!!!!!!!!!!!!!! 
            All variables in bash are global!!!!!!!
@@ -403,7 +401,7 @@ BASH:
     <cmd> 2>&1 | less — Add stderr to stdout and print it with less (useful for gcc)
 
 
-ARRAYS AND LINES:
+## ARRAYS AND LINES:
 
     Reads line by line from variable. To preserve spaces use `IFS=`.
     ```
@@ -420,7 +418,7 @@ ARRAYS AND LINES:
     ${#name[@]} — Length  of the array
 
 
-ALIASES AND FUNCTIONS:
+## ALIASES AND FUNCTIONS:
 
     alias — Print all aliases
         <name> — Print alias
@@ -916,7 +914,7 @@ PRINT:
     aview, asciiview — ASCII art image viewer and video player
 
 
-## AWESOME DEBIAN FILES
+# AWESOME DEBIAN FILES
 
 ## BASH
 
@@ -927,7 +925,7 @@ PRINT:
     /etc/rc.local — Last startup script executed, runs command as su
 
 
-HOME:
+## HOME:
 ~/.Xmodmap — Keyboard map
 
 
@@ -1029,7 +1027,7 @@ HOME:
     /etc/default/grub — Grub configuration file
 
 
-##  GIT
+#  GIT
 
 ### GIT MANTRA:
     ```
@@ -1039,7 +1037,7 @@ HOME:
     git commit -am "<commit_message>"
     ```
 
-CLONE FROM GITHUB:
+#### CLONE FROM GITHUB:
 
     git clone git@github.com:/<user>/<project> — Download repo (later you keep refreshing with 'git pull origin master') -> You need SSH key. If you don't want, use https://github.com/<user>/<repo> for address.
 
@@ -1349,43 +1347,42 @@ CLONE FROM GITHUB:
     :%!xxd -r — Convert back
 
 
-VUNDLE:
+### VUNDLE:
 :PluginInstall — Install plugins
 
 
-REFORMAT CODE:
+### REFORMAT CODE:
 = — Fix indentation
 
 
-
-##########
-## MISC ##
-##########
+# MISC 
 
 
-INSTALL ORACLE JDK:
-```
-sudo apt-get remove openjdk*
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-```
+## INSTALL ORACLE JDK
 
-INSTALL ORACLE JDK ON DEBIAN:
-```
-echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
-echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-sudo apt-get install oracle-java7-set-default
-```
+    ```
+    sudo apt-get remove openjdk*
+    sudo add-apt-repository ppa:webupd8team/java
+    sudo apt-get update
+    sudo apt-get install oracle-java7-installer
+    ```
 
-FIREFOX:
+## INSTALL ORACLE JDK ON DEBIAN
+
+    ```
+    echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+    echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+    sudo apt-get update
+    sudo apt-get install oracle-java7-installer
+    sudo apt-get install oracle-java7-set-default
+    ```
+
+## FIREFOX:
 about:config — Layout.css.devPixelsPerPx default zoom (-1.0)
 
 
-XRANDR:
+## XRANDR:
 xrandr  --output VGA1 --primary — Changes primary screen 
     --output VGA1 --auto --pos 0x0  — `--output LVDS1 --auto --right-of VGA1` - To change their relative positions
     -q — List devices
@@ -1394,35 +1391,39 @@ xrandr  --output VGA1 --primary — Changes primary screen
     --output [VGA|HDMI] --mode 1600x1200 — 24" 16x12 on
 
 
-MOUNT ISO:
-```
-sudo mkdir /media/x
-sudo mount -o loop <path_to_iso> /media/x
-```
+## MOUNT ISO
 
-ECLIPSE:
-ctrl+1 — Quick fix
-alt+shift+s — Source submenu
-ctrl+F7, esc — Close pop-up console window
-ctrl+7, ctrl+/ — Toggle comment
-F3 — Goto definition
-objectaid — UML plugin 
+    ```
+    sudo mkdir /media/x
+    sudo mount -o loop <path_to_iso> /media/x
+    ```
 
+## ECLIPSE
 
-WINE:
-winecfg — Drives tab to set drive
-wine explorer /desktop=abalaba,1024x768 app.exe — Run wine app in virtual desktop
-reason on wine: down alt down — Open menu
-regedit — Registry editor
+    ctrl+1 — Quick fix
+    alt+shift+s — Source submenu
+    ctrl+F7, esc — Close pop-up console window
+    ctrl+7, ctrl+/ — Toggle comment
+    F3 — Goto definition
+    objectaid — UML plugin 
 
 
-CYGWIN:
-[cygwin] ssh-host-cofig —  
-[command prompt] net start sshd — 
-[any] ssh <windows_username - CASE MATTERS!>@<host> — Run sshd (use windows password)
+## WINE:
+
+    winecfg — Drives tab to set drive
+    wine explorer /desktop=abalaba,1024x768 app.exe — Run wine app in virtual desktop
+    reason on wine: down alt down — Open menu
+    regedit — Registry editor
 
 
-GOLANG:
+## CYGWIN
+
+    [cygwin] ssh-host-cofig —  
+    [command prompt] net start sshd — 
+    [any] ssh <windows_username - CASE MATTERS!>@<host> — Run sshd (use windows password)
+
+
+## GOLANG:
 
     go  build       — Compile packages and dependencies
         clean       — Remove object files
