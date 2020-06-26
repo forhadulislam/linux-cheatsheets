@@ -3,6 +3,10 @@
 Print through loop and echo:
 
     for i in {1..30}; do echo "Line $i" ; done
+    
+Create directory for each txt file and move that txt file to the directory with the same name (without extension):
+
+    for x in ./*.txt; do   mkdir "${x%.*}" && mv "$x" "${x%.*}"; done
   
 Print through loop and add an extra line:
 
