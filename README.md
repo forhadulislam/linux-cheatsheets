@@ -12,8 +12,3 @@
 | cUrl | [cUrl](cUrl.md) |
 | File system | [File system](file-system.md) |
 | Format and prints | [Format and prints](format-and-prints.md) |
-
-* [Common](common.md) 
-* [cUrl](cUrl.md) 
-* [File system](file-system.md)
-* [Format and prints](format-and-prints.md) 
