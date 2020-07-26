@@ -1,4 +1,6 @@
 # Linux cheatsheets
 
-* [a relative link](common.md) Common
-* 
+* [Common](common.md) 
+* [cUrl](cUrl.md) 
+* [file-system](file-system.md)
+* [cUrl](format-and-prints.md) 
