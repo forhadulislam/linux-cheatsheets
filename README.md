@@ -8,10 +8,10 @@
 
 | Topic | README |
 | ------ | ------ |
-| Common | [common.md][PlDb] |
-| cUrl | [cUrl.md][PlGh] |
-| File system | [file-system.md][PlGd] |
-| Format and prints | [format-and-prints.md][PlOd] |
+| Common | [Common](common.md) |
+| cUrl | [cUrl](cUrl.md) |
+| File system | [File system](file-system.md) |
+| Format and prints | [Format and prints](format-and-prints.md) |
 
 * [Common](common.md) 
 * [cUrl](cUrl.md) 
