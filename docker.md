@@ -18,3 +18,8 @@
   To follow the logs -
   
     docker logs b69147df3fe5efb -f
+    
+    
+  To inspect -
+  
+    docker inspect b69147df3fe5efb
