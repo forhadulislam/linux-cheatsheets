@@ -6,6 +6,7 @@
   To remove a container
     
     docker rm b69147df3fe5efb
+    docker rm -f b69147df3fe5efb ## To remove forcefully
     
   To run -
     
