@@ -15,15 +15,15 @@
   
 ### Logs
 
-  1. If you have a docker container and id of the container is b69147df3fe5efb. Then you can see the logs of the container by using -
+  If you have a docker container and id of the container is b69147df3fe5efb. Then you can see the logs of the container by using -
   
     docker logs b69147df3fe5efb
   
-  1. To follow the logs -
+  To follow the logs -
   
     docker logs b69147df3fe5efb -f
     
     
-  1. To inspect -
+  To inspect -
   
     docker inspect b69147df3fe5efb
