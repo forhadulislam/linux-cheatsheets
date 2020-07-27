@@ -6,6 +6,10 @@
   To remove a container
     
     docker rm b69147df3fe5efb
+    
+  To run -
+    
+    docker run -d -p 8080:80 httpd
   
   
 ### Docker Volume
