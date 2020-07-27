@@ -1,7 +1,7 @@
 ## Docker commands
 
-
-    docker ps
+    docker ps    
+    docker ps -a
     
   To remove a container
     
