@@ -6,7 +6,7 @@
   
 ### Docker Volume
 
-  `docker run --rm -v ${PWD}:/myvol ubuntu /bin/bash -c "ls -la > /myvol/file.txt"`
+    docker run --rm -v ${PWD}:/myvol ubuntu /bin/bash -c "ls -la > /myvol/file.txt"
   
   
 ### Logs
