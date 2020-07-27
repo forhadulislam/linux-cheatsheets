@@ -2,6 +2,10 @@
 
 
     docker ps
+    
+    To remove a container
+    
+    docker rm b69147df3fe5efb
   
   
 ### Docker Volume
